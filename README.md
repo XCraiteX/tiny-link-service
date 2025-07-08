@@ -1,15 +1,15 @@
-# Links Shortener Microservice API
+# Микросервис Сокращения Ссылок
 
-**Simple link shortener microservice**
+**Простой микросервис для сокращения ссылок и контроля посещений**
 
-## Stack
+## Стек
 - **FastAPI**
 - **SQLAlchemy**
-- **SQLite + aiosqlite driver**
+- **SQLite + aiosqlite драйвер**
 
-## Setup
+## Установка
 
-### 1. Clone the repository
+### 1. Клонируйте репозиторий
 
 ```bash
 git clone https://github.com/XCraiteX/tiny-link-service.git
@@ -18,20 +18,20 @@ git clone https://github.com/XCraiteX/tiny-link-service.git
 ### 2. Replace links in `settings.py`
 
 ```bash
-# Redirected link when the code is unavailable
+# Ссылка для редиректа, если ссылка не найдена
 DEFAULT_LINK = 'https://google.com'
-# Your host link or localhost for tests
+# Ваша ссылка развёртывания на локал хосте для использования
 SERVICE_LINK = 'http://localhost:8000/lnk/'
 ```
 
-### 3. Run server
+### 3. Запуск сервера
 
 ```bash
 cd app
 uvicorn api:app --port 3400  
 ```
 
-### 4. Setup nginx 
+### 4. Конфигурация Nginx
 
 ```nginx
 location /lnk/ {
@@ -40,14 +40,14 @@ location /lnk/ {
 }
 ```
 
-### 5. Use your API for your projects
+### 5. Использование API в своих проектах
 <br>
 
-# Using API
+# Использование API
 
-### 1. Create Link | `POST` - `service_link` `/api`
+### 1. Создание ссылки | `POST` - `service_link` `/api`
 
-- **Parameters**
+- **Параметры**
 
 ```json
 {
@@ -56,10 +56,10 @@ location /lnk/ {
 }
 ```
   
-> **The limit parameter is optional, but if you specify it, a traffic limit will be imposed on your link   
-> (limit - max redirects)**
+> **Лимит не обязательный аргумент, но при наличии, ограничивает максимальное кол-во переходов по ссылке  
+> (После исчерпания лимита, ссылка удаляется)**
 
-###  > Response
+###  > Ответ
 
 - Successfull
 
