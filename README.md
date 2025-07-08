@@ -15,7 +15,7 @@
 git clone https://github.com/XCraiteX/tiny-link-service.git
 ```
 
-### 2. Replace links in `settings.py`
+### 2. Замените ссылки в `settings.py`
 
 ```bash
 # Ссылка для редиректа, если ссылка не найдена
