@@ -80,4 +80,4 @@ location /lnk/ {
 }
 ```
 
-💝 by. XCraiteX & DeepSeek AI
+💝 by. XCraiteX
