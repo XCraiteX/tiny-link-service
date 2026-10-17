@@ -79,3 +79,5 @@ location /lnk/ {
     "details": "Invalid link"
 }
 ```
+
+💝 by. XCraiteX & DeepSeek AI
